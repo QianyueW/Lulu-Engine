@@ -1,0 +1,3 @@
+[submodule "Lulu/Third-party/spdlog"]
+	path = Lulu/Third-party/spdlog
+	url = https://github.com/gabime/spdlog
