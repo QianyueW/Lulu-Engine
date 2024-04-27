@@ -4,6 +4,9 @@
     <Filter Include="Lulu">
       <UniqueIdentifier>{67BC887C-53F3-890D-FCDF-6F10E8F5050F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lulu\Events">
+      <UniqueIdentifier>{6B8ECF45-D743-483B-6038-4212CCEC3E3F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Lulu.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Lulu\EntryPoint.h">
       <Filter>Lulu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lulu\Events\ApplicationEvent.h">
+      <Filter>Lulu\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lulu\Events\Event.h">
+      <Filter>Lulu\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lulu\Events\KeyEvent.h">
+      <Filter>Lulu\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lulu\Events\MouseEvent.h">
+      <Filter>Lulu\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Lulu\Log.h">
       <Filter>Lulu</Filter>
