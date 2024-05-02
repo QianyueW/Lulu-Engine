@@ -1,3 +1,4 @@
+#include "llpch.h"
 #include "Log.h"
 
 namespace Lulu {

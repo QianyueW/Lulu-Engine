@@ -8,8 +8,12 @@ project "Lulu"
    location "Lulu"
    kind "SharedLib"
    language "C++"
+
    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+   pchheader "llpch.h"
+   pchsource "Lulu/src/llpch.cpp"
 
    files 
    { 

@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Lulu {
 
 	class LULU_API MouseMovedEvent : public Event

@@ -2,9 +2,6 @@
 
 #include "Lulu/Core.h"
 
-#include <string>
-#include <functional>
-
 namespace Lulu {
 
 	// Events in Lulu are currently blocking, meaning when an event occurs it
