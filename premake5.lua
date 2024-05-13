@@ -4,6 +4,12 @@ workspace "Lulu"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Lulu/Third-party/GLFW/include"
+
+include "Lulu/Third-party/GLFW" -- include the premake file from GLFW
+
 project "Lulu"
    location "Lulu"
    kind "SharedLib"
@@ -24,7 +30,15 @@ project "Lulu"
    includedirs
    { 
        "%{prj.name}/src",
-       "%{prj.name}/Third-party/spdlog/include"
+       "%{prj.name}/Third-party/spdlog/include",
+       "%{IncludeDir.GLFW}"
+   }
+
+   links
+   {
+      "GLFW",
+      "opengl32.lib",
+      "dwmapi.lib"
    }
 
    filter "system:windows"

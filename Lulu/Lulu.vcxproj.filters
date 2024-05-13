@@ -7,6 +7,12 @@
     <Filter Include="Lulu\Events">
       <UniqueIdentifier>{6B8ECF45-D743-483B-6038-4212CCEC3E3F}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Lulu.h" />
@@ -34,6 +40,12 @@
     <ClInclude Include="src\Lulu\Log.h">
       <Filter>Lulu</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lulu\Window.h">
+      <Filter>Lulu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\llpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="src\Lulu\Log.cpp">
       <Filter>Lulu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\llpch.cpp" />
   </ItemGroup>

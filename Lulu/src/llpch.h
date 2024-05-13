@@ -11,6 +11,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+#include "Lulu/Log.h"
+
 #ifdef LL_PLATFORM_WINDOWS
 	#include <Windows.h>
 #endif
