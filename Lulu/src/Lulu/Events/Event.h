@@ -1,5 +1,6 @@
 #pragma once
 
+#include "llpch.h"
 #include "Lulu/Core.h"
 
 namespace Lulu {
@@ -66,7 +67,7 @@ namespace Lulu {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType()) 
 			{
-				m_Event.m_Handle = func(*(T*)&m_Event);
+				m_Event.m_Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;
