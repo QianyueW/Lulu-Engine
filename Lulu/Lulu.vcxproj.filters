@@ -37,6 +37,12 @@
     <ClInclude Include="src\Lulu\Events\MouseEvent.h">
       <Filter>Lulu\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Lulu\Layer.h">
+      <Filter>Lulu</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Lulu\LayerStack.h">
+      <Filter>Lulu</Filter>
+    </ClInclude>
     <ClInclude Include="src\Lulu\Log.h">
       <Filter>Lulu</Filter>
     </ClInclude>
@@ -53,6 +59,12 @@
       <Filter>Lulu</Filter>
     </ClCompile>
     <ClCompile Include="src\Lulu\Core.cpp">
+      <Filter>Lulu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lulu\Layer.cpp">
+      <Filter>Lulu</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Lulu\LayerStack.cpp">
       <Filter>Lulu</Filter>
     </ClCompile>
     <ClCompile Include="src\Lulu\Log.cpp">
