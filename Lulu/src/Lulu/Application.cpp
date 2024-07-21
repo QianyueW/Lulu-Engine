@@ -4,7 +4,7 @@
 #include "Events/ApplicationEvent.h"
 #include "Log.h"
 
-#include <GLFW/glfw3.h>
+#include <Glad/glad.h>
 
 namespace Lulu {
 
