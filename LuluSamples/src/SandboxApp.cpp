@@ -21,6 +21,7 @@ public:
 	Sandbox() 
     {
         PushOverlay(new ExampleLayer());
+        PushOverlay(new Lulu::ImGuiLayer());
     }
 	~Sandbox() {}
 };

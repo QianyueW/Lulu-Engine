@@ -8,9 +8,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "Lulu/Third-party/GLFW/include"
 IncludeDir["Glad"] = "Lulu/Third-party/Glad/include"
+IncludeDir["ImGui"] = "Lulu/Third-party/imgui"
 
 include "Lulu/Third-party/GLFW" -- include the premake file from GLFW
 include "Lulu/Third-party/Glad" -- include the premake file from GLAD
+include "Lulu/Third-party/ImGui" 
 
 project "Lulu"
    location "Lulu"
@@ -34,13 +36,15 @@ project "Lulu"
        "%{prj.name}/src",
        "%{prj.name}/Third-party/spdlog/include",
        "%{IncludeDir.GLFW}",
-       "%{IncludeDir.Glad}"
+       "%{IncludeDir.Glad}",
+       "%{IncludeDir.ImGui}",
    }
 
    links
    {
       "GLFW",
       "Glad",
+      "ImGui",
       "opengl32.lib",
       "dwmapi.lib"
    }
@@ -54,6 +58,7 @@ project "Lulu"
       { 
          "LL_PLATFORM_WINDOWS",
          "LL_BUILD_DLL",
+         "LL_ENABLE_ASSERTS",
          "GLFW_INCLUDE_NONE" --Glad load all gl headers so glfw should load none of them
       }
 

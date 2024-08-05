@@ -4,3 +4,6 @@
 [submodule "Lulu/Third-party/GLFW"]
 	path = Lulu/Third-party/GLFW
 	url = https://github.com/QianyueW/glfw
+[submodule "Lulu/Third-party/imgui"]
+	path = Lulu/Third-party/imgui
+	url = git@github.com:QianyueW/imgui.git
