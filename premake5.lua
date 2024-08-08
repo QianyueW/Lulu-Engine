@@ -66,8 +66,7 @@ project "Lulu"
 
       postbuildcommands
       {
-          ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/LuluSamples")
-         --  ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/LuluSamples/\"")
+         ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/LuluSamples/\"")
       }
 
    filter "configurations:Debug"
