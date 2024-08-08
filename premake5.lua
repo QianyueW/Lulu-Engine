@@ -1,5 +1,6 @@
 workspace "Lulu"
    architecture "x64"
+   startproject "LuluSamples"
    configurations { "Debug", "Release", "Dist" }
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
@@ -10,14 +11,16 @@ IncludeDir["GLFW"] = "Lulu/Third-party/GLFW/include"
 IncludeDir["Glad"] = "Lulu/Third-party/Glad/include"
 IncludeDir["ImGui"] = "Lulu/Third-party/imgui"
 
-include "Lulu/Third-party/GLFW" -- include the premake file from GLFW
-include "Lulu/Third-party/Glad" -- include the premake file from GLAD
-include "Lulu/Third-party/ImGui" 
+group "Dependencies"
+   include "Lulu/Third-party/GLFW" -- include the premake file from GLFW
+   include "Lulu/Third-party/Glad" -- include the premake file from GLAD
+   include "Lulu/Third-party/ImGui" 
 
 project "Lulu"
    location "Lulu"
    kind "SharedLib"
    language "C++"
+   staticruntime "off"
 
    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -51,7 +54,6 @@ project "Lulu"
 
    filter "system:windows"
       cppdialect "C++17"
-      staticruntime "On"
       systemversion "latest"
 
       defines
@@ -65,27 +67,29 @@ project "Lulu"
       postbuildcommands
       {
           ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/LuluSamples")
+         --  ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/LuluSamples/\"")
       }
 
    filter "configurations:Debug"
       defines { "LL_DEBUG" }
-      buildoptions "/MDd"
+      runtime "Debug"
       symbols "On"
 
    filter "configurations:Release"
       defines { "LL_RELEASE" }
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
 
    filter "configurations:Dist"
       defines { "LL_DIST" }
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
 
 project "LuluSamples"
    location "LuluSamples"
    kind "ConsoleApp"
    language "C++"
+   staticruntime "off"
    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
@@ -108,21 +112,20 @@ project "LuluSamples"
 
    filter "system:windows"
       cppdialect "C++17"
-      staticruntime "On"
       systemversion "latest"
       defines { "LL_PLATFORM_WINDOWS" }
 
    filter "configurations:Debug"
       defines { "LL_DEBUG" }
-      buildoptions "/MDd"
+      runtime "Debug"
       symbols "On"
 
    filter "configurations:Release"
       defines { "LL_RELEASE" }
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"
 
    filter "configurations:Dist"
       defines { "LL_DIST" }
-      buildoptions "/MD"
+      runtime "Release"
       optimize "On"

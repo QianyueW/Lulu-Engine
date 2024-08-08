@@ -10,6 +10,10 @@
 	#error Lulu only supports Windows!
 #endif
 
+#ifdef LL_DEBUG
+#define LL_ENABLE_ASSERTS
+#endif
+
 #ifdef LL_ENABLE_ASSERTS
 #define LL_ASSERT(x, ...) { if(!(x)) { LL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 #define LL_CORE_ASSERT(x, ...) { if(!(x)) { LL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
